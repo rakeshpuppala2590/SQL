@@ -1,0 +1,14 @@
+SELECT ProductID, Name, Color, ListPrice from Production.Product;
+SELECT ProductID, Name, Color, ListPrice from Production.Product WHERE not ListPrice=0;
+SELECT ProductID, Name, Color, ListPrice from Production.Product WHERE Color is NULL;
+SELECT ProductID, Name, Color, ListPrice from Production.Product WHERE Color is NOT NULL;
+SELECT ProductID, Name, Color, ListPrice from Production.Product WHERE Color is NOT NULL and ListPrice>0;
+SELECT Name+' - '+Color as Name_color from Production.Product WHERE Color is NOT NULL;
+SELECT CONCAT('NAME: ', Name, '  --  COLOR: ', Color) as "Name and Color" from Production.Product WHERE Color is NOT NULL;
+SELECT ProductID, Name from Production.Product where ProductID between 400 and 500;
+SELECT ProductID, Name, Color from Production.Product where Color IN ('black', 'blue');
+SELECT * from Production.Product where Name LIKE 'S%';
+SELECT Name, ListPrice from Production.Product where Name LIKE 'S%' ORDER BY Name;
+SELECT Name, ListPrice from Production.Product where Name LIKE 'A%' OR Name LIKE 'S%' ORDER BY Name;
+SELECT * from Production.Product where Name LIKE 'SPO%' AND Name NOT LIKE 'SPOK%' ORDER BY Name;
+SELECT distinct Color from Production.Product where Color is NOT NULL ORDER BY Color desc;
